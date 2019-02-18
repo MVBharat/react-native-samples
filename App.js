@@ -15,8 +15,8 @@ export default class App extends React.Component {
   }
 
   placeSubmitHandler = () => {
-    if(this.state.placeName === ""){
-      return
+    if(this.state.placeName.trim() === ""){
+      return;
     }
 
     this.setState(prevState => {
@@ -27,9 +27,10 @@ export default class App extends React.Component {
   }
 
   render() {
-    // const placeOutput = this.state.places.map(palce => {
-    //   <Text>{place}</Text>
-    // })
+    
+    const placeOutput = this.state.places.map((place, i) => (
+      <Text key={i}>{place}</Text>
+    ))
 
     return (
       <View style={styles.container}>
@@ -45,7 +46,7 @@ export default class App extends React.Component {
             onPress={this.placeSubmitHandler}
             />
         </View>
-        {/* <View>{placeOutput}</View> */}
+        <View>{placeOutput}</View>
       </View>
     );
   }
