@@ -17,7 +17,9 @@ export default class App extends React.Component {
         places: prevState.places.concat({
             key: Math.random(),
             name: placeName,
-            image: placeImage,
+            image: {
+              uri: "https://www.trawell.in/images/pics/bangalore_local.jpg"
+            }
           })
       }
     })
