@@ -61,14 +61,14 @@ export default class App extends React.Component {
     
     return (
       <View style={styles.container}>
-        <PlaceDetails selectedPlace = {this.state.selectedPlace } 
+        <PlaceDetails 
+            selectedPlace = {this.state.selectedPlace } 
             onItemDeleted = {this.itemDeltedHandler}
             onModalClosed = {this.closeModalHandler}
         />
         <PlaceInput onPlaceAdded={this.placeAddedHandler} />        
         <PlaceList
           places={this.state.places} 
-          // onItemDeleted = {this.placeDeletedHandler}
           onItemSelected = {this.placeSelectedHandler}
         />
       </View>
